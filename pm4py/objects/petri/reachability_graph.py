@@ -102,7 +102,8 @@ def construct_reachability_graph_from_flow(incoming_transitions, outgoing_transi
 
     map_states = {}
     for s in incoming_transitions:
-        map_states[s] = ts.TransitionSystem.State(staterep(repr(s)))
+        name = '<<b>' + str(s) + '</b>>'
+        map_states[s] = ts.TransitionSystem.State(name)
         re_gr.states.add(map_states[s])
 
     for s1 in outgoing_transitions:

@@ -12,8 +12,10 @@ def compute_incidence_matrix(net):
     m = len(net.places)
     C = np.zeros((m, n))
     i = 0
-    transition_list = list(net.transitions)
-    place_list = list(net.places)
+
+    transition_list = sorted(net.transitions, key=lambda t: t.label)
+    place_list = sorted(net.places, key=lambda p: p.name)
+        
     while i < n:
         t = transition_list[i]
         for in_arc in t.in_arcs:
