@@ -25,7 +25,7 @@ def compute_incidence_matrix(net):
             # arcs that lead away from transition
             C[place_list.index(out_arc.target), i] += (1*out_arc.weight)
         i += 1
-    return C
+    return C, transition_list, place_list
 
 
 def split_incidence_matrix(matrix, net):
