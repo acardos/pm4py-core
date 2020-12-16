@@ -13,7 +13,7 @@ def compute_incidence_matrix(net):
     C = np.zeros((m, n))
     i = 0
 
-    transition_list = sorted(net.transitions, key=lambda t: t.label)
+    transition_list = sorted(net.transitions, key=lambda t: t.label + t.name)
     place_list = sorted(net.places, key=lambda p: p.name)
         
     while i < n:
